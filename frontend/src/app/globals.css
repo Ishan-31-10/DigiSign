@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: 58 99 245;
+  --bg: 248 250 252;
+  --fg: 15 23 42;
+  --muted: 100 116 139;
+  --border: 226 232 240;
+  --card: 255 255 255;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+/* react-pdf base styles */
+.react-pdf__Page__canvas {
+  display: block !important;
+  user-select: none;
+  width: 100% !important;
+  height: auto !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+}
+
+.react-pdf__Page__textContent,
+.react-pdf__Page__annotations {
+  display: none !important;
+}
+
+/* Signature placement overlay */
+.signature-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.signature-placement {
+  position: absolute;
+  pointer-events: auto;
+  border: 2px dashed rgb(58 99 245 / 0.6);
+  background-color: rgb(58 99 245 / 0.06);
+  border-radius: 4px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.signature-placement:active {
+  cursor: grabbing;
+}
+
+.signature-placement img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.signature-placement .handle {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 14px;
+  height: 14px;
+  background: rgb(58 99 245);
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: nwse-resize;
+}
+
+.signature-placement .remove {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: rgb(220 38 38);
+  color: white;
+  border: 2px solid white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide signature canvas selection */
+.signature-pad-canvas {
+  width: 100%;
+  height: 180px;
+  background: white;
+  border-radius: 8px;
+}

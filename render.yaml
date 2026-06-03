@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: digsign-backend
+    runtime: docker
+    plan: starter
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: RESET_TOKEN_EXPIRES_IN
+        value: 1h
+      - key: CORS_ORIGIN
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: UPLOAD_DIR
+        value: /app/storage
+      - key: MAX_FILE_SIZE_MB
+        value: 25
+    disk:
+      name: digsign-storage
+      mountPath: /app/storage
+      sizeGB: 1

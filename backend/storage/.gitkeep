@@ -1,0 +1,2 @@
+# This directory holds uploaded original PDFs (originals/) and signed copies (signed/).
+# Created automatically at server boot via pdf.service.ensureUploadDirs().
