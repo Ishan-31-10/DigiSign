@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'standalone',
 
   // react-pdf ships an ES module that needs to be transpiled by Next.
   transpilePackages: ['react-pdf'],
