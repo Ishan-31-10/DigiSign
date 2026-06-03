@@ -180,7 +180,7 @@ That builds two images and starts three containers:
 | Service  | URL                       |
 | -------- | ------------------------- |
 | Frontend | http://localhost:3000     |
-| Backend  | http://localhost:5000/api |
+| Backend  | https://digisign-pbcb.onrender.com/api |
 | MongoDB  | mongodb://localhost:27017 |
 
 Seed demo accounts (once Mongo is up):
@@ -206,14 +206,14 @@ cd backend
 cp .env.example .env       # adjust as needed
 npm install
 npm run seed               # creates demo admin & user accounts
-npm run dev                # starts on http://localhost:5000
+npm run dev                # starts on https://digisign-pbcb.onrender.com
 ```
 
 ### 2. Frontend
 
 ```bash
 cd frontend
-cp .env.example .env.local # NEXT_PUBLIC_API_URL=http://localhost:5000/api
+cp .env.example .env.local # NEXT_PUBLIC_API_URL=https://digisign-pbcb.onrender.com/api
 npm install
 npm run dev                # starts on http://localhost:3000
 ```
@@ -259,7 +259,7 @@ reset → audit log → admin stats. 34 assertions.
 
 | Variable                | Default                          | Purpose                                |
 | ----------------------- | -------------------------------- | -------------------------------------- |
-| `NEXT_PUBLIC_API_URL`   | `http://localhost:5000/api`      | Base URL the browser hits for the API  |
+| `NEXT_PUBLIC_API_URL`   | `https://digisign-pbcb.onrender.com/api`      | Base URL the browser hits for the API  |
 
 Example files are provided at `backend/.env.example` and
 `frontend/.env.example`.

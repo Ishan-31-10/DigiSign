@@ -39,7 +39,7 @@ FRONTEND_URL=https://your-vercel-app.vercel.app
 After backend deploys, test:
 
 ```text
-https://your-render-backend.onrender.com/api/health
+https://digisign-pbcb.onrender.com//api/health
 ```
 
 Seed users from Render Shell:
@@ -60,7 +60,7 @@ frontend
 3. Add this environment variable:
 
 ```env
-NEXT_PUBLIC_API_URL=https://your-render-backend.onrender.com/api
+NEXT_PUBLIC_API_URL=https://digisign-pbcb.onrender.com/api
 ```
 
 4. Deploy.
@@ -84,7 +84,7 @@ JWT_EXPIRES_IN=7d
 MONGODB_URI=mongodb://mongo:27017/digsign
 CORS_ORIGIN=http://localhost:3000
 FRONTEND_URL=http://localhost:3000
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=https://digisign-pbcb.onrender.com/api
 MAX_FILE_SIZE_MB=25
 ```
 
